@@ -1,0 +1,698 @@
+/* ============================================================
+   gallery.css — Styles for the Client Results / Gallery page
+   ============================================================ */
+
+/* ── Gallery Hero ─────────────────────────────────────────── */
+.gallery-hero {
+    padding: 160px 0 80px;
+    text-align: center;
+}
+
+.gallery-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: var(--brand-gold);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-style: normal;
+}
+
+.gallery-hero h1 {
+    font-size: 3.8rem;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    background: linear-gradient(to bottom, #fff 70%, #888);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gallery-hero p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Stats bar */
+.gallery-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-top: 3rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    max-width: 600px;
+    margin-inline: auto;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+    font-style: normal;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--card-border);
+    margin: 0 1rem;
+}
+
+/* ── Filter Bar ───────────────────────────────────────────── */
+.filter-section {
+    padding: 0 0 20px;
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.3rem;
+    border: 1px solid var(--card-border);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.filter-btn.active {
+    background: var(--btn-gradient);
+    border-color: transparent;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35);
+}
+
+/* ── Masonry Gallery Grid ─────────────────────────────────── */
+.gallery-section {
+    padding-top: 20px;
+}
+
+.masonry-grid {
+    columns: 4 220px;
+    column-gap: 1.25rem;
+}
+
+.gallery-card {
+    break-inside: avoid;
+    margin-bottom: 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gallery-card:hover {
+    border-color: rgba(0, 242, 255, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-card.hidden {
+    display: none;
+}
+
+.card-media {
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-media img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .card-media img {
+    transform: scale(1.04);
+}
+
+/* Tall card variant */
+.gallery-card.tall .card-media {
+    aspect-ratio: 9/16;
+}
+
+/* Placeholder state */
+.placeholder-media {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-inner {
+    text-align: center;
+    color: var(--text-secondary);
+    opacity: 0.4;
+}
+
+.placeholder-inner i {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.placeholder-inner span {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-style: normal;
+}
+
+/* Card info */
+.card-info {
+    padding: 1rem 1.1rem 1.2rem;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.6rem;
+    font-style: normal;
+}
+
+.tag-post {
+    background: rgba(14, 165, 233, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.tag-story {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.tag-reel {
+    background: rgba(244, 63, 94, 0.15);
+    color: #fb7185;
+    border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+.tag-promotion {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.card-caption {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.card-metrics {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.card-metrics span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-style: normal;
+}
+
+.card-metrics i {
+    color: var(--accent-color);
+    font-size: 0.7rem;
+}
+
+/* Add result hint */
+.add-result-hint {
+    margin-top: 2rem;
+}
+
+.hint-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(0, 242, 255, 0.04);
+    border: 1px dashed rgba(0, 242, 255, 0.2);
+    border-radius: 14px;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+}
+
+.hint-inner i {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.hint-inner strong {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+    font-style: normal;
+}
+
+.hint-inner code {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-style: normal;
+}
+
+/* ── CTA Section ──────────────────────────────────────────── */
+.gallery-cta {
+    padding: 80px 0;
+}
+
+.cta-box {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(139, 92, 246, 0.08));
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 30px;
+    padding: 4rem 3rem;
+}
+
+.cta-icon {
+    position: relative;
+    display: inline-block;
+    font-size: 3rem;
+    color: var(--brand-gold);
+    margin-bottom: 1.5rem;
+}
+
+.cta-dollar {
+    position: absolute;
+    top: -10px;
+    right: -22px;
+    font-size: 1.4rem;
+    color: #ffd700;
+}
+
+.cta-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-box p {
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.05rem;
+}
+
+/* ── Nav active link ─────────────────────────────────────── */
+.nav-active {
+    color: var(--brand-gold) !important;
+}
+
+/* ── btn-sm ───────────────────────────────────────────────── */
+.btn-sm {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.82rem;
+}
+
+/* ── txt-White ────────────────────────────────────────────── */
+.txt-White {
+    color: var(--text-secondary) !important;
+}
+
+/* ============================================================
+   PROMO RESULTS SECTION — Course post cards with engagement
+   ============================================================ */
+
+.promo-results-section {
+    padding: 80px 0 60px;
+}
+
+.promo-results-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.promo-results-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 242, 255, 0.08);
+    border: 1px solid rgba(0, 242, 255, 0.25);
+    color: var(--accent-color);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-style: normal;
+}
+
+.promo-results-header h2 {
+    font-size: 2.8rem;
+    margin-bottom: 0.75rem;
+    background: linear-gradient(to bottom, #fff 60%, #888);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.promo-results-header .txt-gold {
+    background: none;
+    -webkit-text-fill-color: var(--brand-gold);
+}
+
+.promo-results-header p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 3-column grid for the 3 posts */
+.promo-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    align-items: start;
+}
+
+/* Individual promo card */
+.promo-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 22px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    position: relative;
+}
+
+.promo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 242, 255, 0.3);
+}
+
+/* Featured card (Top Performer) */
+.promo-card-featured {
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.15), 0 10px 30px rgba(245, 158, 11, 0.08);
+}
+
+.promo-card-featured:hover {
+    border-color: var(--brand-gold);
+    box-shadow: 0 20px 50px rgba(245, 158, 11, 0.2);
+}
+
+/* Image wrapper */
+.promo-card-image-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+}
+
+.promo-card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.promo-card:hover .promo-card-image-wrap img {
+    transform: scale(1.05);
+}
+
+/* Post number badge (top left) */
+.promo-card-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(5, 5, 5, 0.75);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-style: normal;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    letter-spacing: 0.04em;
+}
+
+/* Top performer badge (top right) */
+.promo-top-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #000;
+    font-size: 0.72rem;
+    font-weight: 800;
+    font-style: normal;
+    padding: 0.3rem 0.7rem;
+    border-radius: 50px;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.5);
+}
+
+/* Card body */
+.promo-card-body {
+    padding: 1.4rem 1.4rem 1.6rem;
+}
+
+.promo-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    font-style: normal;
+}
+
+/* Inline tag badges inside title */
+.tag-before-after {
+    display: inline-block;
+    background: rgba(244, 63, 94, 0.15);
+    color: #fb7185;
+    border: 1px solid rgba(244, 63, 94, 0.3);
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-style: normal;
+    vertical-align: middle;
+}
+
+.tag-event {
+    display: inline-block;
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-style: normal;
+    vertical-align: middle;
+}
+
+.promo-card-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 1.2rem;
+}
+
+/* ── Metrics 2×2 grid ─────────────────────────────────────── */
+.promo-metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+}
+
+.promo-metric {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 0.6rem 0.75rem;
+    transition: border-color 0.2s;
+}
+
+.promo-card:hover .promo-metric {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.promo-metric-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.promo-metric-label {
+    display: block;
+    font-size: 0.67rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-style: normal;
+    line-height: 1;
+    margin-bottom: 0.15rem;
+}
+
+.promo-metric-value {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-style: normal;
+    line-height: 1;
+}
+
+/* ── Strength badge ───────────────────────────────────────── */
+.promo-strength-badge {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    background: rgba(0, 242, 255, 0.05);
+    border: 1px solid rgba(0, 242, 255, 0.18);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    font-style: normal;
+}
+
+.promo-strength-badge i {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Gold variant for top performer */
+.promo-strength-gold {
+    background: rgba(245, 158, 11, 0.07);
+    border-color: rgba(245, 158, 11, 0.25);
+}
+
+.promo-strength-gold i {
+    color: var(--brand-gold);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1024px) {
+    .promo-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .masonry-grid {
+        columns: 2 200px;
+    }
+
+    .gallery-hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .promo-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .masonry-grid {
+        columns: 1;
+    }
+
+    .gallery-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .promo-results-header h2 {
+        font-size: 2rem;
+    }
+
+    .gallery-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stat-divider {
+        width: 60px;
+        height: 1px;
+        margin: 0;
+    }
+}
